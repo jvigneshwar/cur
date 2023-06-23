@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./subtract.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="nav">
+        <div class="inav">
+            <div class="icon"></div>
+            <ul class="nav-link">
+                <li>Skills</li>
+                <li>Project</li>
+                <li>About me</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </div>
+    <div class="outerall">
+        <div class="outer">
+            <div class="left">
+                <div class="content">
+                    <div class="greet">Hi, I'm</div>
+                    <div class="name">VIGNESH</div>
+                    <div class="role">Frontend Developer</div>
+                    <a href="" class="viewa">
+                        <div class="viewp">
+                            <p>VIEW PROFILE</p><iconify-icon icon="octicon:arrow-right-16" style="color: white;">
+                            </iconify-icon>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="rightout">
+                <div class="right">
+                    <div class="wrap">
+                        <img src="../fe21.png" class="img">
+                    </div>
+                    <div class="wrap1">
+                        <img src="./designer 1.png" class="img1">
+                    </div>
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div class="rightr">
+                <div class="content1">
+                    <div class="greet1">Hi, I'm</div>
+                    <div class="name1">VIGNESH</div>
+                    <div class="role1">Graphic Designer</div>
+                    <a href="" class="viewa1">
+                        <div class="viewp1">
+                            <p>VIEW PROFILE</p><iconify-icon icon="octicon:arrow-right-16" style="color: white;">
+                            </iconify-icon>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="outer"></div>
+        <div class="outer"></div>
+        <div class="outer"></div>
+        <div class="outer"></div>
+    </div>
+    <script>
+        const circle = document.getElementsByClassName("circle")[0];
+        circle.addEventListener("dblclick", () => {
+            const rightr = document.getElementsByClassName("rightr")[0];
+            const right = document.getElementsByClassName("right")[0];
+            const circle = document.getElementsByClassName("circle")[0];
+            const img = document.getElementsByClassName("img")[0];
+            const img1 = document.getElementsByClassName("img1")[0];
+            const rightout = document.getElementsByClassName("rightout")[0];
+            console.log(rightout.style);
+            if (rightr.style.marginRight == "-42%" || rightr.style.marginRight == "") {
+                rightr.style.marginRight = "0";
+                circle.style.marginRight = "-200%";
+                img.style.marginBottom = "-60%";
+                img1.style.marginTop = "0%";
+                right.style.boxShadow = "inset 30px 30px 40px rgba(0, 0, 0, 0.2)";
+                rightout.style.backgroundImage = "url('./Frame\ 3.png')"
+            }
+            else {
+                right.style.boxShadow = "inset -30px 30px 40px rgba(0, 0, 0, 0.2)";
+                rightr.style.marginRight = "-42%";
+                circle.style.marginRight = "0%";
+                img.style.marginBottom = "0%";
+                img1.style.marginTop = "60%";
+                rightout.style.backgroundImage = "url('./Group\ 2.png')"
+
+            }
+        })
+    </script>
+</body>
+
+</html>

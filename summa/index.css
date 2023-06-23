@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    overflow-x: scroll;
+    align-items: center;
+    padding-left: calc(50% - 100px);
+    padding-right: calc(50% - 100px);
+    scroll-padding-left: calc(50% - 100px);
+    scroll-padding-right: calc(50% - 100px);
+    scroll-snap-type: x mandatory;
+    cursor: grab;
+    scroll-behavior: smooth;
+    max-width: 100vw;
+    grid-column: 1/4;
+    grid-row: 1/2;
+}
+
+.left{
+    background-image: linear-gradient(to right, white ,white, rgba(255, 255, 255, 0));
+    grid-column: 1/2;
+    grid-row: 1/2;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 250px;
+    cursor: pointer;
+}
+
+.right{
+    background-image: linear-gradient(to left, white,white , rgba(255, 255, 255, 0));
+    grid-column: 3/4;
+    grid-row: 1/2;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 250px;
+    cursor: pointer;
+}
+
+.container::-webkit-scrollbar{
+    display: none;
+}
+
+.item{
+    min-width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+}
+
+.inneritem{
+    width: 80%;
+    height: 80%;
+    background-color: brown;
+    border-radius: 200px;
+    transition: .1s;
+}
+
+.active .inneritem{
+    width: 100%;
+    height: 100%;
+    background-color: blueviolet;
+}  
+
+.scrollcontainer{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+iconify-icon{
+    font-size: 35px !important;
+    color: rgba(0, 0, 0);
+    opacity: 0;
+}
+
+.right iconify-icon{
+    transform: rotateZ(180deg);
+}
+
+.left:hover iconify-icon{
+    opacity: .2;
+}
+
+.right:hover iconify-icon{
+    opacity: .2;
+}
+
+
+

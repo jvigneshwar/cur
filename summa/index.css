@@ -9,26 +9,27 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .container{
+    height: 160px;
     display: flex;
     overflow-x: scroll;
     align-items: center;
-    padding-left: calc(50% - 100px);
-    padding-right: calc(50% - 100px);
-    scroll-padding-left: calc(50% - 100px);
-    scroll-padding-right: calc(50% - 100px);
+    padding-left: calc(50% - 80px);
+    padding-right: calc(50% - 80px);
+    scroll-padding-left: calc(50% - 80px);
+    scroll-padding-right: calc(50% - 80px);
     scroll-snap-type: x mandatory;
     cursor: grab;
     scroll-behavior: smooth;
-    max-width: 100vw;
     grid-column: 1/4;
     grid-row: 1/2;
 }
 
 .left{
-    background-image: linear-gradient(to right, white ,white, rgba(255, 255, 255, 0));
+    background-image: linear-gradient(to right, white 50% , rgba(255, 255, 255, 0));
     grid-column: 1/2;
     grid-row: 1/2;
     z-index: 9;
@@ -40,7 +41,7 @@ body{
 }
 
 .right{
-    background-image: linear-gradient(to left, white,white , rgba(255, 255, 255, 0));
+    background-image: linear-gradient(to left, white 50% , rgba(255, 255, 255, 0));
     grid-column: 3/4;
     grid-row: 1/2;
     z-index: 9;
@@ -56,8 +57,8 @@ body{
 }
 
 .item{
-    min-width: 200px;
-    height: 200px;
+    aspect-ratio: 1/1;
+    height: 100%;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -66,11 +67,11 @@ body{
 }
 
 .inneritem{
-    width: 80%;
-    height: 80%;
+    width: 75%;
+    height: 75%;
     background-color: brown;
     border-radius: 200px;
-    transition: .1s;
+    transition: .2s;
 }
 
 .active .inneritem{
@@ -80,12 +81,13 @@ body{
 }  
 
 .scrollcontainer{
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(3,1fr);
 }
 
 iconify-icon{
-    font-size: 35px !important;
+    font-size: 25px !important;
     color: rgba(0, 0, 0);
     opacity: 0;
 }
@@ -101,6 +103,103 @@ iconify-icon{
 .right:hover iconify-icon{
     opacity: .2;
 }
+
+.nav{
+    height: 10%;
+    width: 100%;
+}
+
+.all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    height: 90%;
+}
+
+.range{
+    margin-top: 25px;
+    width: 100%;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+}
+.innerrange{
+    width: 15%;
+    height: 100%;
+    display: grid;
+    background-color: aqua;
+    border-radius: 20vh;
+}
+
+.totrange{
+    transition: .5s;
+    border-radius: 20vh;
+    width: 10%;
+    background-color: blue;
+}
+
+.percentage{
+    margin-top: 15px;
+    font-family: 'Inter';
+    opacity: .5;
+}
+
+.skillscontent{
+    margin-top: 30px;
+    width: 80%;
+    flex: 1 1 auto;
+    display: flex;
+    gap: 50px;
+}
+.certificate{
+    width: 50%;
+    height: 100%;
+}
+
+.projects{
+    width: 50%;
+    height: 100%;
+}
+
+.title1{
+    padding-left: 10px;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-family: 'Inter';
+    border-bottom: 1.7px solid rgba(0, 0, 0, 0.5);
+    opacity: .5;
+}
+
+.title2{
+    padding-right: 10px;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 18px;
+    font-family: 'Inter';
+    border-bottom: 1.7px solid rgba(0, 0, 0, 0.5);
+    opacity: .5;
+}
+
+@media (max-width : 400px) {
+    .left{
+        display: none;
+    }
+    .right{
+        display: none;
+    }
+    .innerrange{
+        width: 50%;
+    }
+}
+
 
 
 

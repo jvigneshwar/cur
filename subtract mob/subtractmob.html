@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./subtract.css">
+    <link rel="stylesheet" href="./subtractmob.css">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,21 +66,27 @@
             </div>
         </div>
         <div class="outer"></div>
-        <div class="outer"></div>
-        <div class="outer"></div>
-        <div class="outer"></div>
     </div>
     <script>
+        const height = window.innerHeight;
+        const width = window.innerWidth;
+        document.documentElement.style.setProperty('--vh', height + "px");
         const circle = document.getElementsByClassName("circle")[0];
         circle.addEventListener("dblclick", () => {
             const rightr = document.getElementsByClassName("rightr")[0];
             const right = document.getElementsByClassName("right")[0];
+            const left = document.getElementsByClassName("left")[0];
             const circle = document.getElementsByClassName("circle")[0];
             const img = document.getElementsByClassName("img")[0];
             const img1 = document.getElementsByClassName("img1")[0];
             const rightout = document.getElementsByClassName("rightout")[0];
             console.log(rightout.style);
             if (rightr.style.marginRight == "-42%" || rightr.style.marginRight == "") {
+                console.log(width);
+                if(width >= 320 && width <= 480){
+                    left.style.marginLeft = "-200%"
+                    rightr.style.marginLeft = "0%"
+                }
                 rightr.style.marginRight = "0";
                 circle.style.marginRight = "-200%";
                 img.style.marginBottom = "-60%";
@@ -90,6 +96,10 @@
             }
             else {
                 right.style.boxShadow = "inset -30px 30px 40px rgba(0, 0, 0, 0.2)";
+                if(width >= 320 && width <= 480){
+                    left.style.marginLeft = "0%"
+                    rightr.style.marginLeft = "200%"
+                }
                 rightr.style.marginRight = "-42%";
                 circle.style.marginRight = "0%";
                 img.style.marginBottom = "0%";

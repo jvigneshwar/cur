@@ -7,50 +7,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   <link rel="stylesheet" href="./index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
   <title>Document</title>
 </head>
 
 <body>
-  <div class="scrollcontainer">
-    <div class="left"><iconify-icon icon="ep:arrow-left-bold"></iconify-icon></div>
-    <div class="container">
-      <div class="item active">
-        <div class="inneritem">1</div>
+  <div class="nav"></div>
+  <div class="all">
+    <div class="scrollcontainer">
+      <div class="left"><iconify-icon icon="ep:arrow-left-bold"></iconify-icon></div>
+      <div class="container">
+        <div class="item active">
+          <div class="inneritem">1</div>
+        </div>
+        <div class="item">
+          <div class="inneritem">2</div>
+        </div>
+        <div class="item">
+          <div class="inneritem">3</div>
+        </div>
+        <div class="item">
+          <div class="inneritem">4</div>
+        </div>
+        <div class="item">
+          <div class="inneritem">5</div>
+        </div>
+        <div class="item">
+          <div class="inneritem">6</div>
+        </div>
+        <div class="item">
+          <div class="inneritem">7</div>
+        </div>
+        <div class="item">
+          <div class="inneritem">8</div>
+        </div>
+        <div class="item">
+          <div class="inneritem">9</div>
+        </div>
+        <div class="item">
+          <div class="inneritem">10</div>
+        </div>
       </div>
-      <div class="item">
-        <div class="inneritem">2</div>
-      </div>
-      <div class="item">
-        <div class="inneritem">3</div>
-      </div>
-      <div class="item">
-        <div class="inneritem">4</div>
-      </div>
-      <div class="item">
-        <div class="inneritem">5</div>
-      </div>
-      <div class="item">
-        <div class="inneritem">6</div>
-      </div>
-      <div class="item">
-        <div class="inneritem">7</div>
-      </div>
-      <div class="item">
-        <div class="inneritem">8</div>
-      </div>
-      <div class="item">
-        <div class="inneritem">9</div>
+      <div class="right"><iconify-icon icon="ep:arrow-left-bold"></iconify-icon></div>
+    </div>
+    <div class="range">
+      <div class="innerrange">
+        <div class="totrange"></div>
       </div>
     </div>
-    <div class="right"><iconify-icon icon="ep:arrow-left-bold"></iconify-icon></div>
+    <div class="percentage">10%</div>
+    <div class="skillscontent">
+      <div class="certificate">
+        <div class="title1">Certificates</div>
+      </div>
+      <div class="projects">
+        <div class="title2">Projects</div>
+      </div>
+    </div>
   </div>
-
   </div>
   <script>
     const container = document.querySelector(".container");
     const item = document.getElementsByClassName("item");
+    const totrange = document.getElementsByClassName("totrange")[0];
+    const percentage = document.getElementsByClassName("percentage")[0];
+    var height = 160-15;
     container.addEventListener("scroll", event => {
-      var s = parseInt(container.scrollLeft / 180);
+      var s = parseInt(container.scrollLeft / height);
+      console.log(s);
+      totrange.style.width = `${(s+1)*10}%`;
+      percentage.innerHTML = `${(s+1)*10}%`;
       if (s == 0) {
         item[s].classList.add("active")
         item[s + 1].classList.remove("active")
@@ -67,50 +96,13 @@
     });
     
     const left = document.getElementsByClassName("left")[0].addEventListener("click",()=>{
-      container.scrollTo(container.scrollLeft-180,0);
-      console.log(container.scrollLeft);
+      container.scrollTo(container.scrollLeft-height,0);
+      // console.log(container.scrollLeft);
     })
     const right = document.getElementsByClassName("right")[0].addEventListener("click",()=>{
-      container.scrollTo(container.scrollLeft+180,0);
-      console.log(container.scrollLeft);
+      container.scrollTo(container.scrollLeft+height,0);
+      // console.log(container.scrollLeft);
     })
-
-
-
-    // const ele = document.getElementsByClassName('container')[0];
-    // let pos = { top: 0, left: 0, x: 0, y: 0 };
-
-    // const mouseMoveHandler = function (e) {
-    //   const dx = e.clientX - pos.x;
-    //   const dy = e.clientY - pos.y;
-
-    //   ele.scrollTop = pos.top - dy;
-    //   ele.scrollLeft = pos.left - dx;
-    // };
-    // const mouseUpHandler = function () {
-    //   document.removeEventListener('mousemove', mouseMoveHandler);
-    //   document.removeEventListener('mouseup', mouseUpHandler);
-
-    //   ele.style.cursor = 'grab';
-    //   ele.style.removeProperty('user-select');
-    // };
-
-    // const mouseDownHandler = function (e) {
-    //   ele.style.cursor = 'grabbing';
-    //   ele.style.userSelect = 'none';
-    //   pos = {
-    //     left: ele.scrollLeft,
-    //     top: ele.scrollTop,
-    //     x: e.clientX,
-    //     y: e.clientY,
-    //   };
-
-    //   document.addEventListener('mousemove', mouseMoveHandler);
-    //   document.addEventListener('mouseup', mouseUpHandler);
-    // };
-    // ele.addEventListener('mousedown',mouseDownHandler);
-
-
   </script>
 </body>
 
